@@ -1,8 +1,14 @@
-<div>
-    <label for="username">Identifiant</label>
-    <input type="text" id="username" placeholder="username" />
-    <label for="password">Password</label>
-    <input type="password" id="password" placeholder="password" />
-    <a (click)="login()"><button>Login</button></a>
-</div>
+<div class="login-container">
+    <h1>Connexion</h1>
+    <form (submit)="login()">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="button" class="login-button" (click)="login()">Connexion</button>
+    </form>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
   

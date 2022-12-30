@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable, lastValueFrom  } from 'rxjs';
+import { TokenStorageService } from '../services/token-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users-list',
@@ -10,7 +12,9 @@ import { Observable, lastValueFrom  } from 'rxjs';
 export class UsersListComponent implements OnInit {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private tokenStorageService: TokenStorageService,
+    private route: Router
   ){}
 
   ngOnInit(): void {
@@ -19,6 +23,11 @@ export class UsersListComponent implements OnInit {
   }
   displayedColumns: string[] = ['id', 'lastname', 'firstname', 'age'];
   dataSource = [];
+
+  logout(): void {
+    this.tokenStorageService.clear();
+    this.route.navigateByUrl('/login');
+  }
 }
 
 
