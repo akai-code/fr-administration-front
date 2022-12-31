@@ -43,6 +43,5 @@ export class LoginComponent implements OnInit {
         this.errorMessage = 'Une erreur s\'est produite lors de la connexion';
       });
   }
-  
 }
 

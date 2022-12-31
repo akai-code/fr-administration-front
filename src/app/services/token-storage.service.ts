@@ -32,6 +32,5 @@ export class TokenStorageService {
   public logout(): void {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(IS_LOGGED_IN);
-    this.router.navigateByUrl('/login');
   }
 }
