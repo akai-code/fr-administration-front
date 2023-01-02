@@ -12,6 +12,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenHttpInterceptor } from './interceptors/token.interceptor';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
+import { ProfilComponent } from './profil/profil.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     UsersListComponent,
     LoginComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MatTableModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [
     {

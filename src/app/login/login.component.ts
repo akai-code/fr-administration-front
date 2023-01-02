@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           this.errorMessage = 'Le nom d\'utilisateur ou le mot de passe est incorrect';
           return;
         }
-        this.tokenStorageService.save(response.access_token, response.id);
+        this.tokenStorageService.save(response.access_token, username);
         this.route.navigateByUrl('/home');
       })
       .catch((error: HttpErrorResponse) => {

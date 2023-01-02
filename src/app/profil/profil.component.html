@@ -1,0 +1,22 @@
+<app-nav [isLogged]="isLoggedIn"></app-nav>
+
+<div class="user-info">
+    <h2>Profil de {{ dataSource.firstname }} {{ dataSource.lastname }}</h2>
+    <p>ID : {{ dataSource.id }}</p>
+    <p>Age : {{ dataSource.age }}</p>
+    <p>Mot de passe : {{ dataSource.password }}</p>
+</div>
+  
+<form class="update-form" (ngSubmit)="updateUser()">
+    <h2>Mettre à jour les informations</h2>
+    <label for="firstname">Prénom</label>
+    <input type="text" id="firstname" name="firstname" [(ngModel)]="dataSource.firstname">
+    <label for="lastname">Nom</label>
+    <input type="text" id="lastname" name="lastname" [(ngModel)]="dataSource.lastname">
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" [(ngModel)]="dataSource.age">
+    <label for="password">Mot de passe</label>
+    <input type="password" id="password" name="password" [(ngModel)]="dataSource.password">
+    <button type="submit">Mettre à jour</button>
+</form>
+  

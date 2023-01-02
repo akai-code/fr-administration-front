@@ -21,6 +21,7 @@ export class TokenStorageService {
     localStorage.setItem(USERNAME_KEY, id);
     localStorage.setItem(IS_LOGGED_IN, 'true');
     console.log(`Token saved: ${localStorage.getItem(TOKEN_KEY)}`);
+    console.log(`Username saved: ${localStorage.getItem(USERNAME_KEY)}`);
   }
   public getToken(): string {
     const token = localStorage.getItem(TOKEN_KEY);
@@ -32,5 +33,9 @@ export class TokenStorageService {
   public logout(): void {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(IS_LOGGED_IN);
+  }
+  public getIdUser(): string {
+    const id = localStorage.getItem(USERNAME_KEY);
+    return id === null ? '' : id;
   }
 }
