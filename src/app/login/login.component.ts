@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           return;
         }
         this.tokenStorageService.save(response.access_token, response.id);
-        this.route.navigateByUrl("/users");
+        this.route.navigateByUrl('/home');
       })
       .catch((error: HttpErrorResponse) => {
         console.error(error);

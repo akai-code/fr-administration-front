@@ -1,0 +1,28 @@
+.home-container {
+    width: 80%;
+    margin: 100px;
+    text-align: center;
+    
+        h1 {
+        font-size: 28px;
+        margin: 20px 0;
+        }
+        .home-section {
+            h2 {
+            font-size: 24px;
+            margin: 20px 0;
+            }
+        .home-section-links {
+            a {
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            &:hover {
+                color: #666;
+                }
+            }
+        }
+    }
+}

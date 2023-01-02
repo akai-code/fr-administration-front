@@ -5,7 +5,7 @@
       </div>
       <div class="navbar-menu">
         <ul>
-          <li><a href="#">Accueil</a></li>
+          <li *ngIf="isLogged"><a routerLink="/home">Accueil</a></li>
           <li><a href="#">À propos</a></li>
           <li><a href="#">Contact</a></li>
           <li *ngIf="isLogged"><a href="#" (click)="logout()">Déconnexion</a></li>
