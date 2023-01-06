@@ -1,20 +1,100 @@
-table {
-    margin-top: 10%;
-    border-collapse: collapse;
-    
-}
+.button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
 
-td {
-    border: 0.5px solid lightgray;
-    padding: 8px;
-}
-
-th {
-    border: 0.5px solid lightgray;
-    background-color: #333;
-    font-weight: bold;
+  .button button {
+    background-color: rgb(66, 21, 21);
+    color: rgb(66, 102, 201);
+    border: none;
+    padding: 10px 20px;
     font-size: 16px;
-    color: white;
-    text-align: left
-    ;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .button button:hover {
+    background-color: #f1f1f1;
+  }
+
+
+.cases {
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 35px;
+  }
+  
+  .case {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .case::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.2s;
+  }
+  
+  .case:hover::before {
+    opacity: 1;
+  }
+  
+  .case h2 {
+    position: relative;
+    z-index: 2;
+    color: #000;
+    text-align: center;
+    font-size: 22px;
+    color: aqua;
+  }
+
+  .case h3 {
+    position: relative;
+    z-index: 2;
+    color: rgb(58, 27, 27);
+    text-align: center;
+    font-size: 22px;
+  }
+
+
+  
+h1 {
+    text-align: center;
+    color: rgb(226, 16, 16);
+    font-size: 40px;
+    font-weight: 700;
+    margin: 20px;
+    padding: 20px;
+
 }
+
+.btn-add-user {
+  display: block;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.btn-add-user:hover {
+  background-color: #444;
+}
+
+
+

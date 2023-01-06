@@ -14,6 +14,9 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { ProfilComponent } from './profil/profil.component';
 import { FormsModule } from '@angular/forms';
+import { NouveauUserComponent } from './nouveau-user/nouveau-user.component';
+import { RechercherComponent } from './rechercher/rechercher.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     NavComponent,
     HomeComponent,
-    ProfilComponent
+    ProfilComponent,
+    NouveauUserComponent,
+    RechercherComponent
   ],
   imports: [
     BrowserModule,

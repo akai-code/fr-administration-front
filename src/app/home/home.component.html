@@ -1,27 +1,20 @@
 <app-nav [isLogged]="isLoggedIn"></app-nav>
 
-<div class="home-container">
-    <h1>Bienvenue sur votre page d'accueil</h1>
-    <div class="home-section">
-      <h2>Gérer votre profil</h2>
-      <div class="home-section-links">
-        <a routerLink="/profil">Accéder à votre profil</a>
-        <a href="#">Modifier votre nom et mot de passe</a>
-      </div>
-    </div>
-    <div class="home-section">
-      <h2>Gérer les utilisateurs et les associations</h2>
-      <div class="home-section-links">
-        <a routerLink="/users">Lister les utilisateurs</a>
-        <a href="#">Lister les associations</a>
-        <a href="#">Accéder à la fiche d'un utilisateur</a>
-        <a href="#">Accéder à la fiche d'une association</a>
-        <a href="#">Rechercher un utilisateur ou une association</a>
-        <a href="#">Supprimer une association ou un utilisateur</a>
-        <a href="#">Ajouter un utilisateur</a>
-        <a href="#">Ajouter une association</a>
-        <a href="#">Modifier une association</a>
-      </div>
-    </div>
+<h1>Bienvenue</h1>
+
+<div class="cases">
+  <div class="case" routerLink="/users">
+    <h2>Users</h2>
+    <h3>-Lister les utilisateurs</h3>
+    <h3>-Accéder à la fiche d'un utilisateur</h3>
+    <h3>-Rechercher un utilisateur</h3>
+    <h3>-Ajouter un utilisateur</h3>
+  </div>
+  <div class="case" (click)="openAssociations()">
+    <h2>Associations</h2>
+    <h3>-Lister les associations</h3>
+    <h3>-Accéder à la fiche d'une associations</h3>
+    <h3>-Rechercher une association</h3>
+    <h3>-Ajouter une associations</h3>
+  </div>
 </div>
-  

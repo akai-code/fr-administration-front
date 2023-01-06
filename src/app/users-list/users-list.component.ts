@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class UsersListComponent implements OnInit {
   isLoggedIn: boolean = false;
+  users: any= [];
+  userID: string = '';
 
   constructor(
     private http: HttpClient,
@@ -21,9 +23,11 @@ export class UsersListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const resquest: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
-    lastValueFrom(resquest).then(response => this.dataSource = response.body);
+    lastValueFrom(this.http.get('http://localhost:3000/users', { observe: 'response' })).then(response => this.users = response.body);
   }
-  displayedColumns: string[] = ['id', 'lastname', 'firstname', 'age'];
-  dataSource = [];
+
+  searchUser() {
+    const search = (<HTMLInputElement>document.getElementById('search')).value;
+    lastValueFrom(this.http.get(`http://localhost:3000/users/${search}`, { observe: 'response' })).then(response => this.users = response.body);
+  }
 }

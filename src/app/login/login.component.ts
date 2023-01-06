@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     const username: string = (document.getElementById('username') as HTMLInputElement).value;
     const password: string = (document.getElementById('password') as HTMLInputElement).value;
+    this.tokenStorageService.save
     this.api.post({
       endpoint: '/auth/login',
       data: { username, password },

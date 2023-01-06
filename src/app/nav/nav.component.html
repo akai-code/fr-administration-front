@@ -1,16 +1,9 @@
-<nav class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-logo">
-        <a href="#">Logo</a>
-      </div>
-      <div class="navbar-menu">
+<nav >
         <ul>
           <li *ngIf="isLogged"><a routerLink="/home">Accueil</a></li>
-          <li><a href="#">À propos</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a routerLink="/profil">Accès Profil</a></li>
+          <li><a href="#">Rechercher</a></li>
           <li *ngIf="isLogged"><a href="#" (click)="logout()">Déconnexion</a></li>
         </ul>
-      </div>
-    </div>
-  </nav>
+</nav>
   

@@ -1,26 +1,16 @@
 <app-nav [isLogged]="isLoggedIn"></app-nav>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> id </th>
-    <td mat-cell *matCellDef="let user"> {{user.id}} </td>
-  </ng-container>
+<div class="user-info">
+  <h1>Liste des utilisateurs</h1>
+</div>
 
-  <ng-container matColumnDef="lastname">
-    <th mat-header-cell *matHeaderCellDef> Lastname </th>
-    <td mat-cell *matCellDef="let user"> {{user.lastname}} </td>
-  </ng-container>
+<button class="btn-add-user" routerLink="/nouveauUser">+</button>
 
-  <ng-container matColumnDef="firstname">
-    <th mat-header-cell *matHeaderCellDef> Firstname </th>
-    <td mat-cell *matCellDef="let user"> {{user.firstname}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="age">
-    <th mat-header-cell *matHeaderCellDef> Age </th>
-    <td mat-cell *matCellDef="let user"> {{user.age}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<div class="cases">
+  <div class="case" *ngFor="let user of users" [style.max-width]="'350px'">
+    <h2>{{ user.firstname }} {{ user.lastname }}</h2>
+    <p>ID: {{ user.id }}</p>
+    <p>Age: {{ user.age }}</p>
+    <p>Associations: {{ "En attente" }}</p>
+  </div>
+</div>
