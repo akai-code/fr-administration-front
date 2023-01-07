@@ -1,1 +1,12 @@
-<p>rechercher works!</p>
+<app-nav [isLogged]="isLoggedIn"></app-nav>
+
+<div class="rechercher">
+    <h1>Rechercher</h1>
+</div>
+
+<form (ngSubmit)="onSubmit()">
+    <input type="text" name="userId" placeholder="Rechercher..." [(ngModel)]="userId">
+    <button class="user-button" type="submit">User</button>
+    <button class="association-button" type="submit">Association</button>  
+</form>
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>

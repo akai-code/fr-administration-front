@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class UsersListComponent implements OnInit {
   isLoggedIn: boolean = false;
   users: any= [];
-  userID: string = '';
 
   constructor(
     private http: HttpClient,
@@ -23,11 +22,11 @@ export class UsersListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    lastValueFrom(this.http.get('http://localhost:3000/users', { observe: 'response' })).then(response => this.users = response.body);
+    this.http.get('http://localhost:3000/users').subscribe(users => this.users = users);
   }
 
-  searchUser() {
-    const search = (<HTMLInputElement>document.getElementById('search')).value;
-    lastValueFrom(this.http.get(`http://localhost:3000/users/${search}`, { observe: 'response' })).then(response => this.users = response.body);
+  // Fonction pour accéder à son profil et mettre à jour ses informations
+  goToUserProfile(userId: string) {
+    this.route.navigate(['/profilUtilisateur', userId]);
   }
 }

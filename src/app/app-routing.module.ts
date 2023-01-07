@@ -4,6 +4,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NouveauUserComponent } from './nouveau-user/nouveau-user.component';
+import { ProfilUtilisateurComponent } from './profil-utilisateur/profil-utilisateur.component';
 import { ProfilComponent } from './profil/profil.component';
 import { RechercherComponent } from './rechercher/rechercher.component';
 import { UsersListComponent } from './users-list/users-list.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'profil', component: ProfilComponent, canActivate: [AuthGuard]},
   {path: 'nouveauUser', component: NouveauUserComponent, canActivate: [AuthGuard]},
   {path: 'rechercher', component: RechercherComponent, canActivate: [AuthGuard]},
+  {path: 'profilUtilisateur/:userId', component: ProfilUtilisateurComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 

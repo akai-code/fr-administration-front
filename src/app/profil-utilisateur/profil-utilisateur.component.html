@@ -1,0 +1,18 @@
+<app-nav [isLogged]="isLoggedIn"></app-nav>
+
+<div class="container">
+    <div class="user-info">
+        <h1>Profil de {{user.firstname}} {{user.lastname}}</h1>
+    </div>
+
+    <div class="case">
+        <h2><strong>Prénom :</strong> {{user.firstname}}</h2>
+        <h2><strong>Nom :</strong> {{user.lastname}}</h2>
+        <h2><strong>Age :</strong> {{user.age}}</h2>
+        <h2><strong>Associations :</strong> A venir </h2>
+    </div>
+</div>
+
+<button class="delete-button" (click)="deleteUser()">Supprimer</button>
+
+  

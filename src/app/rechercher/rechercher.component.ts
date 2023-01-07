@@ -10,6 +10,9 @@ import { TokenStorageService } from '../services/token-storage.service';
 })
 export class RechercherComponent {
   isLoggedIn: boolean = false;
+  userId: string = '';
+  errorMessage: string= '';
+  user: any = {};
 
   constructor(
     private http: HttpClient,
@@ -19,6 +22,17 @@ export class RechercherComponent {
     this.isLoggedIn = tokenStorageService.isLogged();
   }
 
-  
-
+  onSubmit() {
+    this.http.get(`http://localhost:3000/users/id/${this.userId}`)
+      .toPromise()
+      .then(user => {
+        this.user = user;
+        this.route.navigate(['/profilUtilisateur', this.userId]);
+      })
+      .catch(error => {
+        // Si une erreur est retournée, affichez un message d'erreur
+        this.errorMessage = 'Aucun utilisateur trouvé';
+        return;
+      });
+  }
 }
