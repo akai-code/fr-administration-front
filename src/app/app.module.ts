@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { NouveauUserComponent } from './nouveau-user/nouveau-user.component';
 import { RechercherComponent } from './rechercher/rechercher.component';
 import { ProfilUtilisateurComponent } from './profil-utilisateur/profil-utilisateur.component';
+import { AssociationsListComponent } from './associations-list/associations-list.component';
+import { NouvellAssociationComponent } from './nouvell-association/nouvell-association.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { ProfilUtilisateurComponent } from './profil-utilisateur/profil-utilisat
     ProfilComponent,
     NouveauUserComponent,
     RechercherComponent,
-    ProfilUtilisateurComponent
+    ProfilUtilisateurComponent,
+    AssociationsListComponent,
+    NouvellAssociationComponent
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,7 @@ export class RechercherComponent {
   }
 
   onSubmit() {
-    this.http.get(`http://localhost:3000/users/id/${this.userId}`)
+    this.http.get(`http://localhost:3000/users/${this.userId}`)
       .toPromise()
       .then(user => {
         this.user = user;

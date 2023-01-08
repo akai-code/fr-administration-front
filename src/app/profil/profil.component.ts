@@ -24,7 +24,7 @@ export class ProfilComponent {
   ngOnInit(): void {
     const userId = this.tokenStorageService.getIdUser();
     console.log(userId);
-    this.http.get(`http://localhost:3000/users/id/${userId}`).subscribe(response => {
+    this.http.get(`http://localhost:3000/users/${userId}`).subscribe(response => {
       this.dataSource = response;
     });
   }

@@ -25,7 +25,7 @@ export class NouveauUserComponent {
   createUser(): void {
     this.http.post('http://localhost:3000/users', this.newUser).subscribe(response => {
       console.log(response);
-      this.route.navigate(['/home']);
+      this.route.navigate(['/users']);
     });
   }
 }

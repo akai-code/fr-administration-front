@@ -12,6 +12,7 @@ export class ProfilUtilisateurComponent {
 
   isLoggedIn: boolean = false;
   user: any = {};
+  roles: any = {};
   errorMessage: string= '';
 
   constructor(
@@ -26,12 +27,14 @@ export class ProfilUtilisateurComponent {
   ngOnInit(): void {
     const userId = this.route.snapshot.params['userId'];
     console.log(userId);
-    this.http.get(`http://localhost:3000/users/id/${userId}`).subscribe(user => this.user = user);
+    this.http.get(`http://localhost:3000/users/${userId}`).subscribe(user => this.user = user);
+    this.http.get(`http://localhost:3000/users/${userId}/roles`).subscribe(roles => this.roles = roles);
   }
 
   // Supprimer un utilisateur
   deleteUser() {
     const userId = this.route.snapshot.params['userId'];
+    console.log(userId);  
     this.http.delete(`http://localhost:3000/users/${userId}`).subscribe(response => {
       console.log(response);
     });
