@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NouveauUserComponent } from './nouveau-user/nouveau-user.component';
 import { NouvellAssociationComponent } from './nouvell-association/nouvell-association.component';
+import { ProfiAssociationComponent } from './profi-association/profi-association.component';
 import { ProfilUtilisateurComponent } from './profil-utilisateur/profil-utilisateur.component';
 import { ProfilComponent } from './profil/profil.component';
 import { RechercherComponent } from './rechercher/rechercher.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'nouvellAssociation', component: NouvellAssociationComponent, canActivate: [AuthGuard]},
   {path: 'rechercher', component: RechercherComponent, canActivate: [AuthGuard]},
   {path: 'profilUtilisateur/:userId', component: ProfilUtilisateurComponent, canActivate: [AuthGuard]},
+  {path: 'profilAssociation/:associationId', component: ProfiAssociationComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 

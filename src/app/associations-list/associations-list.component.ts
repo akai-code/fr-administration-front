@@ -26,8 +26,10 @@ export class AssociationsListComponent {
   }
 
   // Fonction pour accéder à son profil et mettre à jour ses informations
-  goToAssociationProfile(userId: string) {
-    //this.route.navigate(['/profilAssociation', associationId]);
+  goToAssociationProfile(idAssociation: number) {
+    console.log(idAssociation);
+    this.route.navigateByUrl(`profilAssociation/${idAssociation}`);
   }
-
+    
 }
+

@@ -40,14 +40,13 @@ export class NouvellAssociationComponent {
       }
     }
       // Tous les IDs d'utilisateurs sont valides, on peut créer l'association
-      console.log(this.newAssociation);
+      console.log(membersIds);
+
       let data = { name: this.newAssociation.name, idUsers: membersIds };
-      console.log(data);
+
 
       this.http.post('http://localhost:3000/associations', data).subscribe(response => {
-        console.log(response);
-        this.route.navigate(['/associations']);
+        {this.route.navigate(['/associations'])}
       });
-    
   }
 }

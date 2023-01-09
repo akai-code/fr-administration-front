@@ -11,8 +11,8 @@ import { TokenStorageService } from '../services/token-storage.service';
 export class ProfilUtilisateurComponent {
 
   isLoggedIn: boolean = false;
-  user: any = {};
-  roles: any = {};
+  user: any = [];
+  roles: any = [];
   errorMessage: string= '';
 
   constructor(

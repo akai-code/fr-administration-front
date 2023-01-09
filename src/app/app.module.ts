@@ -19,6 +19,7 @@ import { RechercherComponent } from './rechercher/rechercher.component';
 import { ProfilUtilisateurComponent } from './profil-utilisateur/profil-utilisateur.component';
 import { AssociationsListComponent } from './associations-list/associations-list.component';
 import { NouvellAssociationComponent } from './nouvell-association/nouvell-association.component';
+import { ProfiAssociationComponent } from './profi-association/profi-association.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NouvellAssociationComponent } from './nouvell-association/nouvell-assoc
     RechercherComponent,
     ProfilUtilisateurComponent,
     AssociationsListComponent,
-    NouvellAssociationComponent
+    NouvellAssociationComponent,
+    ProfiAssociationComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { NouvellAssociationComponent } from './nouvell-association/nouvell-assoc
     BrowserAnimationsModule,
     MatTableModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     {
