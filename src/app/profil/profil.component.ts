@@ -33,8 +33,7 @@ export class ProfilComponent {
   updateUser() {
     const userId = this.tokenStorageService.getIdUser();
     const userData = this.dataSource;
-    this.http.put(`http://localhost:3000/users/${userId}`, userData).subscribe(response => {
-      console.log(response);
-    });
+    this.http.put(`http://localhost:3000/users/${userId}`, userData).subscribe(response => {this.route.navigate(['/home'])});
+    alert('Vos informations ont bien été mises à jour');
   }
 }

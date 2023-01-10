@@ -1,0 +1,17 @@
+Ce composant est utilisé pour gérer la fonctionnalité de connexion de l'application. Il est composé de plusieurs parties :
+
+**Le code TypeScript dans la classe LoginComponent** : cette classe définit le comportement du composant. Elle importe des services et des modules nécessaires, tels que ApiHelperService et TokenStorageService, qui sont utilisés pour effectuer des requêtes HTTP et stocker le jeton d'accès obtenu après la connexion réussie. La classe possède une méthode login(), qui est appelée lorsque l'utilisateur soumet le formulaire de connexion. Cette méthode récupère les valeurs du nom d'utilisateur et du mot de passe entrés par l'utilisateur, puis appelle les méthodes de ApiHelperService pour envoyer une requête de connexion à l'API. Si la connexion réussit, le jeton d'accès est stocké dans TokenStorageService et l'utilisateur est redirigé vers la page d'accueil. Sinon, un message d'erreur est affiché pour indiquer à l'utilisateur que la connexion a échoué.
+
+**Le code HTML dans templateUrl** : Il est l'interface graphique de connexion, Il contient un formulaire pour saisir le nom d'utilisateur et le mot de passe, ainsi qu'un bouton pour soumettre le formulaire. Il utilise les directives (submit) et (click) pour relier les événements de soumission et de clic au composant TypeScript. Il utilise également la directive *ngIf pour afficher ou masquer le message d'erreur en fonction de la valeur de errorMessage.
+
+**Le code CSS dans styleUrls** : Il est pour la mise en forme visuelle de la page de connexion. Il contient des règles pour les éléments tels que les titres, les formulaires et les boutons pour les styliser.
+
+**Le code TypeScript dans la classe ApiHelperService** : Il est un service qui encapsule les logiques d'appel aux services REST, il permet de faire des requêtes HTTP vers l'API (get, post, put, delete..) de manière centralisée. Cela vous permet de gérer les erreurs et les authentifications de manière centralisée pour tous les composants de l'application qui utilisent cette classe.
+
+**TokenStorageService** est un service qui est utilisé pour stocker et gérer les jetons d'accès obtenus après une connexion réussie. Il contient des méthodes pour enregistrer un jeton (save), récupérer un jeton (get), supprimer un jeton (signOut), et vérifier si un jeton est présent (isAuthenticated).
+
+Dans cette implémentation, lorsque l'utilisateur se connecte avec succès, le jeton d'accès reçu est stocké en utilisant la méthode save de TokenStorageService, qui stocke le jeton d'accès et le nom d'utilisateur dans le stockage local du navigateur. Le jeton d'accès est ensuite utilisé pour autoriser l'utilisateur à accéder à certaines parties de l'application qui nécessitent une authentification.
+
+Avec cette implémentation, lorsque l'utilisateur se déconnecte, la méthode signOut est appelée pour supprimer le jeton d'accès et le nom d'utilisateur stockés dans le stockage local. Il peut également vérifier si un jeton est actuellement stocké en utilisant la méthode isAuthenticated, qui vérifie si un jeton d'accès est présent dans le stockage local.
+
+En utilisant ce genre de service, on peut facilement gérer les états d'authentification des utilisateurs dans l'application. On peut ainsi restreindre l'accès aux pages nécessitant une authentification pour les utilisateurs non connectés. Il est aussi possible de définir des règles de péremption pour les jetons, c'est à dire que les utilisateurs devront se reconnecter après un certain temps d'inactivité ou après un certain temps.   
