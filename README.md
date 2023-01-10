@@ -5,12 +5,11 @@ Ce projet vise à réaliser un frontend en Angular pour l'application de gestion
 ## Fonctionnalités
 
 L'application web proposera les fonctionnalités suivantes :
-
-    - 1 - [S'authentifier en tant qu'utilisateur](doc/autentification.md)
-    - 2 - [Gérer un utilisateur (création, mise à jour et suppression)](doc/manageUser.md)
-    - 3 - [Gérer une association (création, mise à jour et suppression)](doc/manageAssociation.md)
-    - 4 - [Lister les utilisateurs et les associations](doc/listUsersAndAssociations.md)
-    - 5 - [Rechercher un utilisateur ou une association](doc/searchUserOrAssociation.md)
+- 1 - [S'authentifier en tant qu'utilisateur](doc/autentification.md)
+- 2 - [Gérer un utilisateur (création, mise à jour et suppression)](doc/manageUser.md)
+- 3 - [Gérer une association (création, mise à jour et suppression)](doc/manageAssociation.md)
+- 4 - [Lister les utilisateurs et les associations](doc/listUsersAndAssociations.md)
+- 5 - [Rechercher un utilisateur ou une association](doc/searchUserOrAssociation.md)
 
 Il sera également possible de :
 
