@@ -20,11 +20,14 @@ export class ProfiAssociationComponent {
   updateFormVisible: boolean = false;
   createFormVisible: boolean = false;
   createMinuteVisible: boolean = false;
+  createMemberVisible: boolean = false;
   userToUpdate: any;
   minuteToCreate: any;
   newRole: string = '';
   newMinute: any = {};
+  newMember: any = {};
   test: boolean = false;
+
 
 
   constructor(
@@ -70,6 +73,11 @@ export class ProfiAssociationComponent {
     this.userToUpdate = user;
   }
 
+  // Ouvre le formulaire de création d'un membre
+  AjouterMembre() {
+    this.createMemberVisible = !this.createMemberVisible;
+  }
+
   // Mise à jour du rôle d'un membre
   updateUserRole(user: any) {
     const associationId = this.route.snapshot.params['associationId'];
@@ -83,6 +91,7 @@ export class ProfiAssociationComponent {
   // Création d'un rôle pour un membre
   createUserRole(user: any) {
     const associationId = this.route.snapshot.params['associationId'];
+    console.log(this.http.post('http://localhost:3000/roles/', { idUser: user.id, idAssociation: associationId, name: this.newRole }));
     this.http.post('http://localhost:3000/roles/', { idUser: user.id, idAssociation: associationId, name: this.newRole }).subscribe(response => {
       this.ngOnInit();
       this.createFormVisible = false;
@@ -95,32 +104,54 @@ export class ProfiAssociationComponent {
     this.createMinuteVisible = !this.createMinuteVisible;
   }
 
-  // Création d'une minute
-  createMinute() {
+  // Cree un membre
+  createMember() {
     const associationId = this.route.snapshot.params['associationId'];
-    let membersIds = [];
-    console.log(this.newMinute.idUsers);
-    if (this.newMinute.idUsers) {
-      membersIds = this.newMinute.idUsers.split(',').map((id: string | number) => +id);
-    }
- 
-    for (let i = 0; i < membersIds.length; i++) {
-      if (membersIds[i] in this.members) {
-      }else {
-        this.test = true;
-      }
-    }
-
-    if (this.test) {
-      this.errorMessage = 'Un ou plusieurs membres n\'existent pas';
-    }else {
-      let data = {content: this.newMinute.content, date: this.newMinute.date, idAssociation: associationId, idUsers: membersIds};
-      this.http.post('http://localhost:3000/minutes/', data).subscribe(response => {
-        this.ngOnInit();
-        this.createMinuteVisible = false;
-        this.newMinute = '';
-      });
-    }
-
+    console.log(this.newMember.idUser)
+    console.log(this.members)
+    this.http.post('http://localhost:3000/associations/:id/members', associationId, this.newMember.idUser).subscribe(response => {
+      this.ngOnInit();
+      this.createMemberVisible = false;
+      this.newMember = {};
+    } );
   }
+
+
+
+  // Créer une minute
+  createMinute() {
+  // Récupérez l'identifiant de l'association à partir de l'URL
+  const associationId = this.route.snapshot.params['associationId'];
+  
+  // Vérifiez si les IDs des membres de la minute sont valides
+  let membersIds = [];
+    membersIds = this.newMinute.idVoters.split(',').map((id: string | number) => +id);
+  if (this.isIdValid(membersIds)) {
+    console.error("Les IDs des membres de la minute sont invalides");
+    return;
+  }
+
+  // Envoyez une requête POST pour créer la minute
+  this.http.post('http://localhost:3000/minutes/', { idAssociation: associationId, date: this.newMinute.date, content: this.newMinute.content, idVoters: this.newMinute.idVoters })
+    .subscribe(response => {
+      // Rafraîchissez la liste des minutes
+      this.ngOnInit();
+      // Cachez le formulaire de création de minute
+      this.createMinuteVisible = false;
+      // Réinitialisez l'objet "newMinute"
+      this.newMinute = {};
+    });
+}
+
+isIdValid(id: number[]) {
+  let valid: boolean = true;
+  id.forEach(element => {
+    console.log(this.members.find((member: { id: number; }) => member.id === element));
+    if (this.members.find((member: { id: number; }) => member.id === element)) {
+      valid = false;
+      console.log("ID invalide--------------------------------------");
+    }
+  });
+  return valid;
+}
 }

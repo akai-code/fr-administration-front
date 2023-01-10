@@ -11,8 +11,10 @@ import { TokenStorageService } from '../services/token-storage.service';
 export class RechercherComponent {
   isLoggedIn: boolean = false;
   userId: string = '';
+  associationId: string = '';
   errorMessage: string= '';
   user: any = {};
+  association: any = {};
 
   constructor(
     private http: HttpClient,
@@ -32,6 +34,21 @@ export class RechercherComponent {
       .catch(error => {
         // Si une erreur est retournée, affichez un message d'erreur
         this.errorMessage = 'Aucun utilisateur trouvé';
+        return;
+      });
+  }
+
+  onSubmitAssociation() {
+    // Récupérer les informations de l'association en fonction de son identifiant
+    this.http.get(`http://localhost:3000/associations/${this.associationId}`)
+      .toPromise()
+      .then(association => {
+        this.association = association;
+        this.route.navigate(['/profilAssociation', this.associationId]);
+      })
+      .catch(error => {
+        // Si une erreur est retournée, affichez un message d'erreur
+        this.errorMessage = 'Aucune association trouvée';
         return;
       });
   }
