@@ -1,27 +1,46 @@
-# FrAdministrationFront
+# Projet de numérisation de la gestion des associations par les services publics
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+Ce projet vise à réaliser un frontend en Angular pour l'application de gestion des associations et des utilisateurs développée dans le module de JXT
 
-## Development server
+## Fonctionnalités
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+L'application web proposera les fonctionnalités suivantes :
 
-## Code scaffolding
+    - S'authentifier en tant qu'utilisateur
+    - Gérer un utilisateur : création, mise à jour et suppression
+    - Gérer une association : création, mise à jour et suppression
+    - Lister les utilisateurs et les associations
+    - Rechercher un utilisateur ou une association
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Il sera également possible de :
 
-## Build
+    Accéder à son profil et mettre à jour ses informations (changement de nom et de mot de passe)
+    Lister les utilisateurs
+    Lister les associations
+    Accéder à la fiche d'un utilisateur (informations personnelles et liste des associations auxquelles il appartient)
+    Accéder à la fiche d'une association (informations sur l'association, ses membres et ses minutes)
+    Rechercher un utilisateur ou une association par son id
+    Supprimer une association ou un utilisateur
+    Ajouter un utilisateur
+    Ajouter une association
+    Modifier une association (par exemple en modifiant les rôles des membres).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Procédure de communication avec le backend
 
-## Running unit tests
+La procédure de communication avec le backend est faite avec api-helper. Nous avons vu comment réaliser des requêtes avec le backend et comment s'authentifier (avec un token et la mise en place d'une guarde). Ce principe est repris pour toutes les fonctionnalitées
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Bibliothèques utilisées
 
-## Running end-to-end tests
+Angular Version 11.2.3
+Node Version 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Comment lancer le projet
+ 
+    - Cloner le projet : git clone git@github.com:akai-code/fr-administration-front.git
+    - Lancer la commande : npm install 
+    - Lancer le backend : cd backend/numerisation-gestion-des-associations && npm run start 
+    - Lancer la commande: ng serve
 
-## Further help
+## Schema explicatif des liens entre les composants
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    
