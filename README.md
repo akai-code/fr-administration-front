@@ -35,6 +35,34 @@ La procédure de communication avec le backend est faite avec api-helper. Nous a
     - Lancer le backend : cd backend/numerisation-gestion-des-associations && npm run start 
     - Lancer la commande: ng serve
 
-## Schema explicatif des liens entre les composants
+## Les composants de l'application
 
+    • nouveau-user : ce composant est utilisé pour créer un nouvel utilisateur. Il peut demander à l'utilisateur de saisir des informations telles que son nom, son adresse e-mail,
+Un composant en Angular est un élément de l'interface utilisateur (UI) qui permet de gérer une vue particulière dans une application web développée avec Angular. 
+    • login : ce composant est utilisé pour l'écran de connexion de l'application. Il demander à l'utilisateur de saisir son nom d'utilisateur et son mot de passe, et vérifier ces informations d'identification auprès de notre serveur.
+    • home : ce composant est utilisé pour la page d'accueil de l'application. Il affiche deux boutons ( manage user, manage association )
+    • user-list : ce composant est utilisé pour afficher une liste d'utilisateurs. Il peut afficher des informations telles que le nom de l'utilisateur et son id
+    • association-list : ce composant est utilisé pour afficher une liste d'associations. Il peut afficher des informations telles que le nom de l'association et son id.
+    • guards : les guards sont utilisés pour protéger les routes de l'application. Ils peuvent vérifier si l'utilisateur est authentifié ou possède les autorisations appropriées pour accéder à une route donnée.
+    • interceptors : Les intercepteurs sont utilisés pour manipuler les requêtes et les réponses HTTP de l'application. Ils sont utilisés pour ajouter des en-têtes à toutes les requêtes, pour gérer les erreurs de réponse.
+    • nav : ce composant est utilisé pour la barre de navigation de l'application. Il afficher des liens vers différentes sections de l'application, tels que "Accueil", "Profil", "Rechercher", etc.
+    • nouveau-user : ce composant est utilisé pour créer un nouvel utilisateur. Il peut demander à l'utilisateur de saisir des informations telles que son nom, son adresse e-mail, Un composant en Angular est un élément de l'interface utilisateur (UI) qui permet de gérer une vue particulière dans une application web développée avec Angular. 
+    • login : ce composant est utilisé pour l'écran de connexion de l'application. Il demander à l'utilisateur de saisir son nom d'utilisateur et son mot de passe, et vérifier ces informations d'identification auprès de notre serveur.
+    • home : ce composant est utilisé pour la page d'accueil de l'application. Il affiche deux boutons ( manage user, manage association )
+    • user-list : ce composant est utilisé pour afficher une liste d'utilisateurs. Il peut afficher des informations telles que le nom de l'utilisateur et son id
+    • association-list : ce composant est utilisé pour afficher une liste d'associations. Il peut afficher des informations telles que le nom de l'association et son id.
+    • guards : les guards sont utilisés pour protéger les routes de l'application. Ils peuvent vérifier si l'utilisateur est authentifié ou possède les autorisations appropriées pour accéder à une route donnée.
+    • interceptors : Les intercepteurs sont utilisés pour manipuler les requêtes et les réponses HTTP de l'application. Ils sont utilisés pour ajouter des en-têtes à toutes les requêtes, pour gérer les erreurs de réponse.
+    • nav : ce composant est utilisé pour la barre de navigation de l'application. Il afficher des liens vers différentes sections de l'application, tels que "Accueil", "Profil", "Rechercher", etc.
+    • nouveau-user : ce composant est utilisé pour créer un nouvel utilisateur. Il peut demander à l'utilisateur de saisir des informations telles que son nom, son adresse e-mail, etc., et de créer un compte avec ces informations.
+    • nouvelle-association : ce composant est utilisé pour créer une nouvelle association. Il peut demander à l'utilisateur de saisir des informations telles que le nom de l'association, sa description, son adresse, etc.
+    • profil-assoc : ce composant est utilisé pour afficher le profil d'une association spécifique. Il peut afficher des informations telles que le nom de l'association, sa description, son adresse, etc., ainsi que des informations sur les utilisateurs qui font partie de l'association.
+    • profil : ce composant est utilisé pour afficher le profil d'un utilisateur spécifique. Il peut afficher des informations telles que le nom de l'utilisateur, etc
+    • service : ce composant est un service qui regroupe un ensemble de fonctionnalité ou les méthodes pour faire des appels réseaux, manipuler des données, etc. Il peut être utilisé pour effectuer des appels HTTP pour récupérer des données du serveur, pour stocker des données localement, etc.
+      etc., et de créer un compte avec ces informations.
+    • nouvelle-association : ce composant est utilisé pour créer une nouvelle association. Il peut demander à l'utilisateur de saisir des informations telles que le nom de l'association, sa description, son adresse, etc.
+    • profil-assoc : ce composant est utilisé pour afficher le profil d'une association spécifique. Il peut afficher des informations telles que le nom de l'association, sa description, son adresse, etc., ainsi que des informations sur les utilisateurs qui font partie de l'association.
+    • profil : ce composant est utilisé pour afficher le profil d'un utilisateur spécifique. Il peut afficher des informations telles que le nom de l'utilisateur, etc
+    • service : ce composant est un service qui regroupe un ensemble de fonctionnalité ou les méthodes pour faire des appels réseaux, manipuler des données, etc. Il peut être utilisé pour effectuer des appels HTTP pour récupérer des données du serveur, pour stocker des données localement, etc.
+      
     
